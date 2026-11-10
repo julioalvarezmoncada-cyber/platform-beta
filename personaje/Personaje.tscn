@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cg2x6q4j3yaup"]
+
+[ext_resource type="Script" uid="uid://cfbwdikdukdey" path="res://personaje/character_body_2d.gd" id="1_qlvcr"]
+[ext_resource type="SpriteFrames" uid="uid://4nvpn3jwlmr6" path="res://personaje/new_sprite_frames.tres" id="2_hq5un"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlvcr"]
+size = Vector2(10.5, 27.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsxim"]
+size = Vector2(16.125, 27.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_srvrl"]
+size = Vector2(10.5, 27)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1484357450]
+collision_layer = 4
+script = ExtResource("1_qlvcr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=973460313]
+position = Vector2(6, 0)
+sprite_frames = ExtResource("2_hq5un")
+animation = &"jump_up"
+frame_progress = 0.1786569
+
+[node name="CollisionGround" type="CollisionShape2D" parent="." unique_id=1178163684]
+position = Vector2(7.75, 2.25)
+shape = SubResource("RectangleShape2D_qlvcr")
+debug_color = Color(0.90939116, 0.42654523, 0.34006673, 0.41960785)
+
+[node name="CollisionAir" type="CollisionShape2D" parent="." unique_id=189030449]
+position = Vector2(9, 1)
+shape = SubResource("RectangleShape2D_gsxim")
+debug_color = Color(0.72156864, 0.6, 0.69803923, 0.41960785)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1806672357]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1859212947]
+position = Vector2(7.75, 2.5)
+shape = SubResource("RectangleShape2D_srvrl")
+debug_color = Color(0.89827734, 0.14828709, 0.6836785, 0.41960785)

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ctry482i6paks"]
+
+[ext_resource type="Texture2D" uid="uid://ht7unelhul1d" path="res://assets/sprites/Idle-Sheet.png" id="1_f50pn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsxim"]
+size = Vector2(22, 38)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1770760971]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1913211782]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_gsxim")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=934597428]
+texture = ExtResource("1_f50pn")
+hframes = 10
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=324993650]
